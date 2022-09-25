@@ -15,12 +15,8 @@ namespace Encapsulation.Models
 
             public string PrintInfo()
             {
-                const int TEMP_CONVERSION = 32;
-                const float UPPER_READING = 9.0f;
-                const float LOWER_READING = 5.0f;
-
-                double newTemp = (UPPER_READING / LOWER_READING) * _temperature + TEMP_CONVERSION;
-                return $"I am in {_location} and it is {CheckCity()}. {CheckTemperature()}. The temperature in Fahrenheit is {newTemp}. ";
+                double newTemp = (9.0f / 5.0f) * _temperature + 32;
+                return $"I am in {_location} and it is {CheckCity()}. {GetTemperatureDesciption()}. The temperature in Fahrenheit is {newTemp}. ";
         }
 
         private string CheckCity()
@@ -46,7 +42,7 @@ namespace Encapsulation.Models
                 return "🔆";
             }
 
-            private string CheckTemperature()
+            private string GetTemperatureDesciption()
             {
                 int UPPER_TEMPERATURE = 30;
                 int LOWER_TEMPERATURE = 10;
